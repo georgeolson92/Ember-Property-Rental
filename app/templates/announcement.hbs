@@ -1,0 +1,9 @@
+<h1>Here are your PSAs</h1>
+
+<ul>
+  {{#each model as |announcement|}}
+    <li>{{announcement.text}} -- Courtesy of {{announcement.announcer}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'index'}}Home{{/link-to}}
