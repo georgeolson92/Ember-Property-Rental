@@ -2,8 +2,10 @@
 
 <ul>
   {{#each model as |announcement|}}
-    <li>{{announcement.text}} -- Courtesy of {{announcement.announcer}}</li>
+    {{announcement-tile announcement=announcement}}
   {{/each}}
 </ul>
+
+{{new-announcement save5="save6"}}
 
 {{#link-to 'index'}}Home{{/link-to}}
