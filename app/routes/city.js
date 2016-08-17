@@ -14,12 +14,18 @@ export default Ember.Route.extend({
       });
       this.transitionTo('city', params.city);
     },
-    delete(city) {
+    update(city, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          city.set(key,params[key]);
+        }
+      });
+      city.save();
+      this.transitionTo('city');
+    },
+    destroyCity(city) {
       city.destroyRecord();
       this.transitionTo('index');
-      if (confirm('Are you sure you want to delete this city?')) {
-        this.sendAction('delete', city);
-      }
     }
   }
 });
