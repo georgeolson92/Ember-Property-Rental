@@ -14,9 +14,11 @@
 
 <ul>
   {{#each model.cities as |city|}}
-    <li>{{city.name}}</li>
+    {{city-tile city=city destroyCity="destroyCity"}}
   {{/each}}
 </ul>
+
+{{new-city save8="save9"}}
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
