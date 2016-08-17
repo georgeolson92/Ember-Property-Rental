@@ -17,10 +17,6 @@ export default Ember.Route.extend({
       var newCity = this.store.createRecord('city', params);
       newCity.save();
       this.transitionTo('index');
-    },
-    destroyCity(city) {
-      city.destroyRecord();
-      this.transitionTo('index');
     }
   }
 });

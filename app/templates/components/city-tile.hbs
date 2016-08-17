@@ -1,5 +1,5 @@
 <li>
-  {{city.name}}
-
-  <button {{action 'delete' city}}>Delete</button>
+  {{#link-to 'city' city.id}}{{city.name}}{{/link-to}}
 </li>
+
+{{city city=model delete="delete"}}
